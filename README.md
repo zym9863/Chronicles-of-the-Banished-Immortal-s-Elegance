@@ -1,3 +1,5 @@
+[English Version](README_EN.md)
+
 # 谪仙风流录 - Chronicles of the Banished Immortal's Elegance
 
 一个基于 Three.js 的3D交互式古风探索应用，以李白为原型的谪仙风流体验。
