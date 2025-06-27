@@ -90,7 +90,7 @@ src/
 - **Mouse Move** - Control view
 - **Left Mouse Button** - Interact with items
 - **ESC** - Open/close settings
-- **F1** - Open/close help
+- **h** - Open/close help
 
 ### Interaction Tips
 - Interactive items emit a soft glow

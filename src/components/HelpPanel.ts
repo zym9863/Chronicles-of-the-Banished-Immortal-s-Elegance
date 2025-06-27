@@ -41,7 +41,7 @@ export class HelpPanel {
               <strong>ESC</strong> - 打开/关闭设置面板
             </div>
             <div class="help-item">
-              <strong>F1</strong> - 打开/关闭帮助面板
+              <strong>h</strong> - 打开/关闭帮助面板
             </div>
           </div>
           
@@ -145,9 +145,9 @@ export class HelpPanel {
     const closeBtn = this.panel.querySelector('#help-close') as HTMLButtonElement;
     closeBtn?.addEventListener('click', () => this.hide());
 
-    // F1键打开帮助
+    // h键打开帮助
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'F1') {
+      if (e.key === 'h') {
         e.preventDefault();
         this.toggle();
       }
