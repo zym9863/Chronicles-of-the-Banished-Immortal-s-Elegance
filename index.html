@@ -1,13 +1,32 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <title>谪仙风流录 - Chronicles of the Banished Immortal's Elegance</title>
+    <meta name="description" content="一个基于Three.js的3D交互式古风探索应用" />
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <div id="loading-screen">
+        <div class="loading-content">
+          <h1>谪仙风流录</h1>
+          <div class="loading-spinner"></div>
+          <p>正在加载长安城...</p>
+        </div>
+      </div>
+      <canvas id="three-canvas"></canvas>
+      <div id="ui-overlay">
+        <div id="crosshair"></div>
+        <div id="interaction-prompt"></div>
+        <div id="controls-info">
+          <p>WASD - 移动 | 鼠标 - 视角 | 点击 - 交互 | ESC - 设置 | F1 - 帮助</p>
+        </div>
+        <button class="settings-toggle" id="settings-toggle" title="设置">⚙️</button>
+        <button class="help-toggle" id="help-toggle" title="帮助">❓</button>
+      </div>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
