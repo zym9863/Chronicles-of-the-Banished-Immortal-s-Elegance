@@ -38,6 +38,13 @@ class ChroniclesApp {
   }
 
   /**
+   * 检查应用是否已初始化
+   */
+  public isReady(): boolean {
+    return this.isInitialized;
+  }
+
+  /**
    * 初始化应用
    */
   private async init(): Promise<void> {

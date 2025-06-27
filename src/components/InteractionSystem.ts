@@ -49,7 +49,7 @@ export class InteractionSystem {
   /**
    * 画布点击事件
    */
-  private onCanvasClick(event: MouseEvent): void {
+  private onCanvasClick(_event: MouseEvent): void {
     // 检查是否有指针锁定
     if (document.pointerLockElement !== this.canvas) return;
 
@@ -66,7 +66,7 @@ export class InteractionSystem {
   /**
    * 画布鼠标移动事件
    */
-  private onCanvasMouseMove(event: MouseEvent): void {
+  private onCanvasMouseMove(_event: MouseEvent): void {
     // 检查是否有指针锁定
     if (document.pointerLockElement !== this.canvas) return;
 

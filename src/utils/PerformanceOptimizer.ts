@@ -158,7 +158,7 @@ export class PerformanceOptimizer {
       } else if (distance > config.mediumDistance) {
         // 中距离 - 中等细节
         object.visible = true;
-        this.applyMediumLOD(object, config);
+        this.applyMediumLOD(object);
       } else {
         // 近距离 - 高细节
         object.visible = true;
@@ -170,7 +170,7 @@ export class PerformanceOptimizer {
   /**
    * 应用中等LOD
    */
-  private applyMediumLOD(object: THREE.Object3D, config: LODConfig): void {
+  private applyMediumLOD(object: THREE.Object3D): void {
     object.traverse((child) => {
       if (child instanceof THREE.Mesh) {
         // 降低材质质量

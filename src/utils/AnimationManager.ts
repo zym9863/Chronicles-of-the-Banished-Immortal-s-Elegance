@@ -1,15 +1,17 @@
 import * as THREE from 'three';
 
 /**
- * 动画类型枚举
+ * 动画类型常量
  */
-export enum AnimationType {
-  FLOAT = 'float',
-  ROTATE = 'rotate',
-  PULSE = 'pulse',
-  GLOW = 'glow',
-  BOUNCE = 'bounce'
-}
+export const AnimationType = {
+  FLOAT: 'float',
+  ROTATE: 'rotate',
+  PULSE: 'pulse',
+  GLOW: 'glow',
+  BOUNCE: 'bounce'
+} as const;
+
+export type AnimationType = typeof AnimationType[keyof typeof AnimationType];
 
 /**
  * 动画配置接口
@@ -170,7 +172,7 @@ export class AnimationManager {
 
     const currentTime = this.clock.getElapsedTime();
 
-    for (const [id, animation] of this.animations.entries()) {
+    for (const [ , animation] of this.animations.entries()) {
       if (!animation.isActive) continue;
 
       const elapsed = currentTime - animation.startTime;

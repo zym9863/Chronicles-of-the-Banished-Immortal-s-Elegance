@@ -4,14 +4,14 @@ import * as THREE from 'three';
  * 场景管理器 - 负责管理Three.js的核心组件
  */
 export class SceneManager {
-  public scene: THREE.Scene;
-  public camera: THREE.PerspectiveCamera;
-  public renderer: THREE.WebGLRenderer;
+  public scene!: THREE.Scene;
+  public camera!: THREE.PerspectiveCamera;
+  public renderer!: THREE.WebGLRenderer;
   public canvas: HTMLCanvasElement;
   
   // 光照系统
-  private ambientLight: THREE.AmbientLight;
-  private directionalLight: THREE.DirectionalLight;
+  private ambientLight!: THREE.AmbientLight;
+  private directionalLight!: THREE.DirectionalLight;
   private pointLights: THREE.PointLight[] = [];
   
   // 渲染循环
@@ -80,9 +80,6 @@ export class SceneManager {
     // 设置色调映射，增强视觉效果
     this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
     this.renderer.toneMappingExposure = 1.2;
-    
-    // 启用物理正确的光照
-    this.renderer.physicallyCorrectLights = true;
   }
 
   /**
@@ -178,8 +175,6 @@ export class SceneManager {
     
     const animate = () => {
       this.animationId = requestAnimationFrame(animate);
-      
-      const deltaTime = this.clock.getDelta();
       
       // 调用所有更新回调
       this.updateCallbacks.forEach(callback => callback());

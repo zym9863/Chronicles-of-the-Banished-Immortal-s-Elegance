@@ -5,11 +5,8 @@ import * as THREE from 'three';
  */
 export class ChanganCityBuilder {
   private scene: THREE.Scene;
-  private textureLoader: THREE.TextureLoader;
-
   constructor(scene: THREE.Scene) {
     this.scene = scene;
-    this.textureLoader = new THREE.TextureLoader();
   }
 
   /**

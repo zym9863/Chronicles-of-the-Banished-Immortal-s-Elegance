@@ -1,3 +1,5 @@
+import * as THREE from 'three';
+
 /**
  * 简单的测试运行器
  */
@@ -283,8 +285,9 @@ function checkWebGLSupport(): FeatureSupport {
       return { supported: false, score: 0, details: 'WebGL not supported' };
     }
 
-    const renderer = gl.getParameter(gl.RENDERER);
-    const vendor = gl.getParameter(gl.VENDOR);
+    const webgl = gl as WebGLRenderingContext;
+    const renderer = webgl.getParameter(webgl.RENDERER);
+    const vendor = webgl.getParameter(webgl.VENDOR);
     
     return {
       supported: true,
