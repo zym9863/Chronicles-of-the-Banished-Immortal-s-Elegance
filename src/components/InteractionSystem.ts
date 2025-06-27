@@ -18,7 +18,6 @@ export interface InteractableObject {
  */
 export class InteractionSystem {
   private camera: THREE.PerspectiveCamera;
-  private scene: THREE.Scene;
   private canvas: HTMLCanvasElement;
   
   private raycaster: THREE.Raycaster = new THREE.Raycaster();
@@ -28,9 +27,8 @@ export class InteractionSystem {
   private currentHoveredObject: InteractableObject | null = null;
   private interactionPrompt: HTMLElement | null = null;
 
-  constructor(camera: THREE.PerspectiveCamera, scene: THREE.Scene, canvas: HTMLCanvasElement) {
+  constructor(camera: THREE.PerspectiveCamera, _scene: THREE.Scene, canvas: HTMLCanvasElement) {
     this.camera = camera;
-    this.scene = scene;
     this.canvas = canvas;
     
     this.interactionPrompt = document.getElementById('interaction-prompt');
